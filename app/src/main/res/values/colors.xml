@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="greyscale_black">#1B1B1F</color>
+    <color name="greyscale_black_65">#6B6B6D</color>
+    <color name="greyscale_black_45">#98989A</color>
+    <color name="greyscale_black_10">#E8E8E9</color>
+    <color name="white_inputs">#FAFAFA</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#0B80EC</color>
+    <color name="blue_disabled">#660B80EC</color>
+    <color name="dark_blue">#4A72FF</color>
+    <color name="error_red">#E2353B</color>
+    <color name="success_green">#4DC821</color>
+
+    <!-- Login Screen -->
+    <color name="blue_forgot_password">#15AEEE</color>
+    <color name="blue_create_an_account">#23BEFF</color>
+</resources>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainActivityViewModel"
+            type="com.test.chatterwave.beta.features.main_activity.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_16">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                urlImage="@{mainActivityViewModel.userHeaderInfo.photo}"
+                android:id="@+id/userAvatar"
+                android:layout_width="@dimen/margin_64"
+                android:layout_height="@dimen/margin_64"
+                app:shapeAppearance="@style/roundedImageView"
+                android:background="@color/greyscale_black_10"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="@{mainActivityViewModel.userHeaderInfo.userCountsDomainModel.posts}"
+                        android:id="@+id/counterPosts"
+                        style="@style/DefaultBoldHeadline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="20" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/DefaultRegularCallout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/posts" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_32"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="@{mainActivityViewModel.userHeaderInfo.userCountsDomainModel.followers}"
+                        android:id="@+id/counterFollowers"
+                        style="@style/DefaultBoldHeadline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="20" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/DefaultRegularCallout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/followers" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginLeft="@dimen/margin_32"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="@{mainActivityViewModel.userHeaderInfo.userCountsDomainModel.following}"
+                        android:id="@+id/counterFollowing"
+                        style="@style/DefaultBoldHeadline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="20" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/DefaultRegularCallout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/following" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayoutCompat2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:text="@{mainActivityViewModel.userHeaderInfo.fullName}"
+                android:id="@+id/userFullName"
+                style="@style/DefaultBoldCallout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Anastasia Anastasieva" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:text="@{mainActivityViewModel.userHeaderInfo.bio}"
+                android:id="@+id/userBio"
+                style="@style/DefaultRegularFootnote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                tools:text="Love my life 🦄✨🌙
+24 years old
+Designer from Kharkiv,Ukraine
+Don’t bunt. Aim out of the ballpark. Aim for the company of immortals. - David Ogilvy." />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:text="@{mainActivityViewModel.userHeaderInfo.city}"
+                android:id="@+id/userCity"
+                style="@style/DefaultRegularFootnote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                tools:text="Kharkiv" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editProfileButton"
+            style="@style/PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/edit_profile"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayoutCompat3"
+            app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

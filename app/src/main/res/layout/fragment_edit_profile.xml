@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainActivityViewModel"
+            type="com.test.chatterwave.beta.features.main_activity.MainActivityViewModel" />
+        <variable
+            name="editProfileViewModel"
+            type="com.test.chatterwave.beta.features.main_activity.edit_profile_fragment.EditProfileViewModel" />
+        <import type="com.test.chatterwave.beta.utils.UIResponseState"/>
+        <import type="com.test.chatterwave.beta.utils.NetworkResult"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.test.chatterwave.beta.features.main_activity.edit_profile_fragment.EditProfileFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/toolBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="@dimen/padding_16"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/padding_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cancelButton"
+                style="@style/DefaultRegularSubheadline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/cancel" />
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DefaultBoldSubheadline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/edit_profile" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/shareButton"
+                style="@style/DefaultBoldSubheadline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:textColor="@color/blue" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            setImage="@{mainActivityViewModel.userEditProfileAvatar}"
+            android:id="@+id/appCompatImageView"
+            android:layout_width="@dimen/weight_124dp"
+            android:layout_height="@dimen/weight_124dp"
+            android:background="@color/greyscale_black_10"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/toolBarLayout"
+            app:layout_constraintTop_toBottomOf="@+id/toolBarLayout"
+            app:shapeAppearance="@style/roundedImageView"
+            app:strokeWidth="@dimen/stroke_1dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/addPhotoButton"
+            style="@style/DefaultRegularFootnote"
+            showOnLoading="@{mainActivityViewModel.userEditProfileAvatar}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/add_a_photo"
+            android:textColor="@color/blue"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+        <com.google.android.material.textview.MaterialTextView
+            showOnSuccess="@{mainActivityViewModel.userEditProfileAvatar}"
+            android:id="@+id/changePhotoButton"
+            style="@style/DefaultRegularFootnote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/change_profile_photo"
+            android:textColor="@color/blue"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            style="@style/TextInputLayoutDefault"
+            android:id="@+id/editFieldsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_18"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/nexButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/TextInputLayoutDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/DefaultBoldSubheadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_name" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    setEndIconDrawable="@{editProfileViewModel.fullNameLocalValidation}"
+                    android:id="@+id/fullNameLayout"
+                    style="@style/TextInputLayoutDefault"
+                    setError="@{editProfileViewModel.fullNameLocalValidation}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/success_green"
+                    app:boxStrokeErrorColor="@color/error_red"
+                    app:counterEnabled="false"
+                    app:errorEnabled="true"
+                    app:errorTextColor="@color/error_red"
+                    app:layout_constraintEnd_toEndOf="@+id/addCityText"
+                    app:layout_constraintStart_toStartOf="@+id/addCityText"
+                    app:layout_constraintTop_toBottomOf="@+id/addCityText">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fullNameEditText"
+                        style="@style/BioInputTextDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:maxLines="1"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/margin_8"
+                        android:text="@{mainActivityViewModel.userHeaderInfoForEditProfile.fullName}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/TextInputLayoutDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/DefaultBoldSubheadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nickname" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nickNameLayout"
+                    style="@style/TextInputLayoutDefault"
+                    setEndIconDrawable="@{editProfileViewModel.nicknameValidationLocal}"
+                    setNetworkEndIconDrawable="@{editProfileViewModel.nicknameValidation}"
+                    setError="@{editProfileViewModel.nicknameValidationLocal}"
+                    setNetworkError="@{editProfileViewModel.nicknameValidation}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/success_green"
+                    app:boxStrokeErrorColor="@color/error_red"
+                    app:counterEnabled="false"
+                    app:errorEnabled="true"
+                    app:errorTextColor="@color/error_red"
+                    app:layout_constraintEnd_toEndOf="@+id/addCityText"
+                    app:layout_constraintStart_toStartOf="@+id/addCityText"
+                    app:layout_constraintTop_toBottomOf="@+id/addCityText">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nickNameEditText"
+                        style="@style/BioInputTextDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:maxLines="1"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/margin_8"
+                        android:text="@{mainActivityViewModel.userHeaderInfoForEditProfile.nickname}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/TextInputLayoutDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/DefaultBoldSubheadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/city" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    setEndIconDrawable="@{editProfileViewModel.userCityValidationLocal}"
+                    android:id="@+id/cityLayout"
+                    style="@style/TextInputLayoutDefault"
+                    setError="@{editProfileViewModel.userCityValidationLocal}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeErrorColor="@color/error_red"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/success_green"
+                    app:counterEnabled="false"
+                    app:errorEnabled="true"
+                    app:errorTextColor="@color/error_red"
+                    app:layout_constraintEnd_toEndOf="@+id/addCityText"
+                    app:layout_constraintStart_toStartOf="@+id/addCityText"
+                    app:layout_constraintTop_toBottomOf="@+id/addCityText">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cityEditText"
+                        style="@style/BioInputTextDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="@dimen/margin_8"
+                        android:text="@{mainActivityViewModel.userHeaderInfoForEditProfile.city}"
+                        tools:text="adsfsdfsdf" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                style="@style/TextInputLayoutDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/DefaultBoldSubheadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bio" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/bioLayout"
+                    style="@style/TextInputLayoutDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/bio"
+                    app:boxStrokeErrorColor="@color/error_red"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="120"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@null"
+                    app:errorTextColor="@color/error_red"
+                    app:layout_constraintEnd_toEndOf="@+id/addBio"
+                    app:layout_constraintStart_toStartOf="@+id/addBio"
+                    app:layout_constraintTop_toBottomOf="@+id/addBio">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bioEditText"
+                        style="@style/BioInputTextDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_bottom_96dp"
+                        android:text="@{mainActivityViewModel.userHeaderInfoForEditProfile.bio}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nexButton"
+            style="@style/PrimaryButton"
+            android:layout_marginBottom="@dimen/margin_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{editProfileViewModel.fullNameLocalValidation instanceof UIResponseState.Success &amp;&amp; editProfileViewModel.nicknameValidationLocal instanceof UIResponseState.Success ? true : false}"
+            setButtonNetworkLoading="@{editProfileViewModel.userUpdateResultState}"
+            android:text="Save changes"
+            app:iconGravity="top"
+            android:padding="@dimen/material_button_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

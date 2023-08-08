@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.test.chatterwave.beta.features.main_activity.MainActivityViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/error_message"
+            style="@style/DefaultRegularFootnote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/something_went_wrong"
+            android:textColor="?colorError" />
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="@{() -> mainViewModel.getCurrentUser()}"
+            android:id="@+id/retryButton"
+            style="@style/FollowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/retry" />
+
+    </LinearLayout>
+
+
+</layout>
+
+

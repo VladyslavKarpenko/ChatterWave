@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="mainActivityViewModel"
+            type="com.test.chatterwave.beta.features.main_activity.MainActivityViewModel" />
+        <variable
+            name="createPostViewModel"
+            type="com.test.chatterwave.beta.features.main_activity.create_post_fragment.CreatePostViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/padding_16"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="com.test.chatterwave.beta.features.main_activity.create_post_fragment.CreatePostFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/toolBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                setClickable="@{createPostViewModel.createPostFragmentState}"
+                android:id="@+id/cancelButton"
+                style="@style/DefaultRegularSubheadline"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/cancel" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DefaultBoldSubheadline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="@string/new_post" />
+
+            <com.google.android.material.textview.MaterialTextView
+                setClickable="@{createPostViewModel.createPostFragmentState}"
+                android:id="@+id/shareButton"
+                style="@style/DefaultBoldSubheadline"
+                android:textColor="@color/blue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="@string/share"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.fenchtose.nocropper.CropperImageView
+            setImage="@{mainActivityViewModel.userCreatePostPhoto}"
+            android:id="@+id/cropperView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/weight_358dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolBarLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="@dimen/padding_16"
+            style="@style/TextInputLayoutDefault"
+            android:id="@+id/bioTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:layout_constraintEnd_toEndOf="@+id/cropperView"
+            app:layout_constraintStart_toStartOf="@+id/cropperView"
+            app:layout_constraintTop_toBottomOf="@+id/cropperView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                setClickable="@{createPostViewModel.createPostFragmentState}"
+                style="@style/PostInputTextDefault"
+                android:id="@+id/bioEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

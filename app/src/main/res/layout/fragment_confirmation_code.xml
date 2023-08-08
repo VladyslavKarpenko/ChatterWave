@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.chatterwave.beta.features.auth_activity.sign_up.code_confirmation_fragment.ConfirmationCodeFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back_ios" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/enterCode"
+        style="@style/DefaultBoldTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:text="@string/enter_confirmation_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/enterCodeText"
+        style="@style/DefaultRegularFootnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:text="@string/enter_confirmation_code_text"
+        app:layout_constraintEnd_toEndOf="@+id/enterCode"
+        app:layout_constraintStart_toStartOf="@+id/enterCode"
+        app:layout_constraintTop_toBottomOf="@+id/enterCode" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmCodeInputLayout"
+        style="@style/TextInputLayoutDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@null"
+        app:layout_constraintEnd_toEndOf="@+id/enterCodeText"
+        app:layout_constraintStart_toStartOf="@+id/enterCodeText"
+        app:layout_constraintTop_toBottomOf="@+id/enterCodeText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmCodeEditText"
+            style="@style/TextInputEditTextDefault"
+            android:maxLength="6"
+            android:cursorVisible="false"
+            android:textColor="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/confirmCodeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_16"
+        app:layout_constraintBottom_toBottomOf="@+id/confirmCodeInputLayout"
+        app:layout_constraintEnd_toEndOf="@+id/confirmCodeInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/confirmCodeInputLayout"
+        app:layout_constraintTop_toTopOf="@+id/confirmCodeInputLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirmButton"
+        style="@style/PrimaryButton"
+        android:layout_width="@dimen/text_input_weight"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:enabled="false"
+        android:padding="@dimen/material_button_padding"
+        android:text="@string/confirm"
+        app:iconGravity="top"
+        app:layout_constraintEnd_toEndOf="@+id/confirmCodeInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/confirmCodeInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/confirmCodeInputLayout" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/codeDidNotComeText"
+        style="@style/DefaultBoldFootnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32"
+        android:text="@string/code_did_not_come"
+        app:layout_constraintEnd_toEndOf="@+id/confirmButton"
+        app:layout_constraintStart_toStartOf="@+id/confirmButton"
+        app:layout_constraintTop_toBottomOf="@+id/confirmButton" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/resendText"
+        style="@style/DefaultBoldFootnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:text="@string/resend_code"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/codeDidNotComeText"
+        app:layout_constraintStart_toStartOf="@+id/codeDidNotComeText"
+        app:layout_constraintTop_toBottomOf="@+id/codeDidNotComeText" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/changeEmailOrPhoneText"
+        style="@style/DefaultBoldFootnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:text="@string/change_email_address"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/resendText"
+        app:layout_constraintStart_toStartOf="@+id/resendText"
+        app:layout_constraintTop_toBottomOf="@+id/resendText" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/timerTextView"
+        style="@style/DefaultBoldFootnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_32"
+        android:visibility="invisible"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/changeEmailOrPhoneText"
+        app:layout_constraintStart_toStartOf="@+id/changeEmailOrPhoneText"
+        app:layout_constraintTop_toBottomOf="@+id/changeEmailOrPhoneText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

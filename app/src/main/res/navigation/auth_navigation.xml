@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.login_fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_loginFragment_to_mainActivity"
+            app:destination="@id/mainActivity"
+            app:popUpTo="@id/auth_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_phoneEmailFragment"
+            app:destination="@id/phoneEmailFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loginErrorDialog"
+            app:destination="@id/loginErrorDialog" />
+        <action
+            android:id="@+id/action_loginFragment_to_termsAndConditionsFragment"
+            app:destination="@id/termsAndConditionsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.test.chatterwave.beta.features.main_activity.ui.MainActivity" />
+
+    <fragment
+        android:id="@+id/birthdayFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.birthday_fragment.BirthdayFragment"
+        android:label="fragment_birthday"
+        tools:layout="@layout/fragment_birthday" >
+        <action
+            android:id="@+id/action_birthdayFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+        <action
+            android:id="@+id/action_birthdayFragment_to_birthdayDatePickerFragment"
+            app:destination="@id/birthdayDatePickerFragment" >
+            <argument
+                android:name="minLegalYearOfRegistration" />
+            <argument
+                android:name="maxLegalYearOfRegistration" />
+        </action>
+        <action
+            android:id="@+id/action_birthdayFragment_to_confirmationCodeFragment"
+            app:destination="@id/confirmationCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneEmailFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.phone_email_fragment.PhoneEmailFragment"
+        android:label="fragment_phone_email"
+        tools:layout="@layout/fragment_phone_email" >
+        <action
+            android:id="@+id/action_phoneEmailFragment_to_termsAndConditionsFragment"
+            app:destination="@id/termsAndConditionsFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_phoneEmailFragment_to_enterPasswordFragment2"
+            app:destination="@id/enterPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsAndConditionsFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.terms_and_conditions.TermsAndConditionsFragment"
+        android:label="fragment_terms_and_conditions"
+        tools:layout="@layout/fragment_terms_and_conditions" />
+    <fragment
+        android:id="@+id/userFullNameFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.user_full_name.UserFullNameFragment"
+        android:label="fragment_user_full_name"
+        tools:layout="@layout/fragment_user_full_name" >
+        <action
+            android:id="@+id/action_userFullNameFragment_to_birthdayFragment"
+            app:destination="@id/birthdayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nicknameFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.nickname_fragment.NicknameFragment"
+        android:label="fragment_nickname"
+        tools:layout="@layout/fragment_nickname" >
+        <action
+            android:id="@+id/action_nicknameFragment_to_userFullNameFragment"
+            app:destination="@id/userFullNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.test.TestFragment"
+        android:label="fragment_test"
+        tools:layout="@layout/fragment_test" />
+    <dialog
+        android:id="@+id/birthdayDatePickerFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.birthday_fragment.BirthdayDatePickerFragment"
+        android:label="BirthdayDatePickerFragment" >
+        <argument
+            android:name="minYearRegistration"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <argument
+            android:name="maxYearRegistration"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </dialog>
+    <dialog
+        android:id="@+id/loginErrorDialog"
+        android:name="com.test.chatterwave.beta.features.auth_activity.login_fragment.LoginErrorDialog"
+        android:label="LoginErrorDialog" />
+    <fragment
+        android:id="@+id/enterPasswordFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.enter_pass_fragment.EnterPasswordFragment"
+        android:label="fragment_enter_password"
+        tools:layout="@layout/fragment_enter_password" >
+        <action
+            android:id="@+id/action_enterPasswordFragment_to_nicknameFragment"
+            app:destination="@id/nicknameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationCodeFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.code_confirmation_fragment.ConfirmationCodeFragment"
+        android:label="fragment_confirmation_code"
+        tools:layout="@layout/fragment_confirmation_code" >
+        <action
+            android:id="@+id/action_confirmationCodeFragment_to_phoneEmailFragment"
+            app:destination="@id/phoneEmailFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/auth_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_confirmationCodeFragment_to_avatarFragment"
+            app:destination="@id/avatarFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/auth_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/avatarFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.AvatarFragment"
+        android:label="fragment_avatar"
+        tools:layout="@layout/fragment_avatar" >
+        <action
+            android:id="@+id/action_avatarFragment_to_addAvatarDialog"
+            app:destination="@id/addAvatarDialog" />
+        <action
+            android:id="@+id/action_avatarFragment_to_deleteAvatarDialog"
+            app:destination="@id/deleteAvatarDialog" />
+        <action
+            android:id="@+id/action_avatarFragment_to_addCityFragment"
+            app:destination="@id/addCityFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addAvatarDialog"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.AddAvatarDialog"
+        android:label="AddAvatarDialog" >
+        <action
+            android:id="@+id/action_addAvatarDialog_to_createAvatarFragment"
+            app:destination="@id/createAvatarWithCameraFragment" />
+        <action
+            android:id="@+id/action_addAvatarDialog_to_openSettingsDialog"
+            app:destination="@id/openSettingsDialog" />
+        <action
+            android:id="@+id/action_addAvatarDialog_to_createAvatarWithGalleryFragment"
+            app:destination="@id/createAvatarWithGalleryFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/createAvatarWithCameraFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_create_fragment.create_with_camera.CreateAvatarWithCameraFragment"
+        android:label="fragment_create_avatar"
+        tools:layout="@layout/fragment_create_avatar" />
+    <dialog
+        android:id="@+id/openSettingsDialog"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.OpenSettingsDialog"
+        android:label="OpenSettingsDialog" >
+        <argument
+            android:name="isCameraPermission"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/createAvatarWithGalleryFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_create_fragment.create_with_gallery.CreateAvatarWithGalleryFragment"
+        android:label="fragment_create_avatar_with_gallery"
+        tools:layout="@layout/fragment_create_avatar_with_gallery" />
+    <dialog
+        android:id="@+id/deleteAvatarDialog"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.DeleteAvatarDialog"
+        android:label="DeleteAvatarDialog" />
+    <fragment
+        android:id="@+id/addCityFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.add_city_fragment.AddCityFragment"
+        android:label="fragment_add_city"
+        tools:layout="@layout/fragment_add_city" >
+        <action
+            android:id="@+id/action_addCityFragment_to_addBioFragment"
+            app:destination="@id/addBioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBioFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.add_bio_fragment.AddBioFragment"
+        android:label="fragment_add_bio"
+        tools:layout="@layout/fragment_add_bio" >
+        <action
+            android:id="@+id/action_addBioFragment_to_notificationDialog"
+            app:destination="@id/notificationDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/notificationDialog"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.add_bio_fragment.NotificationDialog"
+        android:label="NotificationDialog" >
+        <action
+            android:id="@+id/action_notificationDialog_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </dialog>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.password_recovery.change_pass_fragment.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" >
+        <action
+            android:id="@+id/action_changePasswordFragment_to_phoneEmailFragment"
+            app:destination="@id/phoneEmailFragment" />
+        <action
+            android:id="@+id/action_changePasswordFragment_to_confirmChangePasswordFragment"
+            app:destination="@id/confirmChangePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmChangePasswordFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.password_recovery.confirm_change_password_fragment.ConfirmChangePasswordFragment"
+        android:label="fragment_confirm_change_password"
+        tools:layout="@layout/fragment_confirm_change_password" >
+        <action
+            android:id="@+id/action_confirmChangePasswordFragment_to_createNewPasswordFragment"
+            app:destination="@id/createNewPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewPasswordFragment"
+        android:name="com.test.chatterwave.beta.features.auth_activity.password_recovery.create_new_password.CreateNewPasswordFragment"
+        android:label="fragment_create_new_password"
+        tools:layout="@layout/fragment_create_new_password" >
+        <action
+            android:id="@+id/action_createNewPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/auth_navigation"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>

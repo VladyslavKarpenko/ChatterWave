@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.chatterwave.beta.features.auth_activity.sign_up.nickname_fragment.NicknameFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrow_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/arrow_back_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_back_ios" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/createNameTextView"
+        style="@style/DefaultBoldTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:text="@string/create_nickname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/createNameTextTextView"
+        style="@style/DefaultRegularFootnote"
+        android:layout_width="@dimen/text_view_weight"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:gravity="center"
+        android:text="@string/choose_nickname"
+        app:layout_constraintEnd_toEndOf="@+id/createNameTextView"
+        app:layout_constraintStart_toStartOf="@+id/createNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/createNameTextView" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nicknameLayout"
+        style="@style/TextInputLayoutDefault"
+        android:layout_marginTop="@dimen/margin_32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:boxStrokeErrorColor="@color/error_red"
+        app:counterEnabled="false"
+        app:endIconMode="custom"
+        app:endIconTint="@color/success_green"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/multiply_circle"
+        app:errorTextColor="@color/error_red"
+        app:layout_constraintEnd_toEndOf="@+id/createNameTextTextView"
+        app:layout_constraintStart_toStartOf="@+id/createNameTextTextView"
+        app:layout_constraintTop_toBottomOf="@+id/createNameTextTextView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nicknameEditText"
+            style="@style/TextInputEditTextDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextButton"
+        style="@style/PrimaryButton"
+        android:layout_width="@dimen/text_input_weight"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_16"
+        android:enabled="false"
+        android:padding="@dimen/material_button_padding"
+        android:text="@string/next"
+        app:iconGravity="top"
+        app:layout_constraintEnd_toEndOf="@+id/nicknameLayout"
+        app:layout_constraintStart_toStartOf="@+id/nicknameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/nicknameLayout">
+
+    </com.google.android.material.button.MaterialButton>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

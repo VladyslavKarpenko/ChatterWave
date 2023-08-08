@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_page_navigation"
+    app:startDestination="@id/currentUserFragment">
+
+    <fragment
+        android:id="@+id/currentUserFragment"
+        android:name="com.test.chatterwave.beta.features.main_activity.current_user_fragment.CurrentUserFragment"
+        android:label="CurrentUserFragment" >
+        <action
+            android:id="@+id/action_currentUserFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_currentUserFragment_to_authActivity2"
+            app:destination="@id/authActivity2"
+            app:popUpTo="@id/authActivity2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.test.chatterwave.beta.features.main_activity.edit_profile_fragment.EditProfileFragment"
+        android:label="EditProfileFragment" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_editProfileAvatarDialog"
+            app:destination="@id/editProfileAvatarDialog" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_addAvatarDialog3"
+            app:destination="@id/addAvatarDialog3" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_editProfileCancelDialog"
+            app:destination="@id/editProfileCancelDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/editProfileAvatarDialog"
+        android:name="com.test.chatterwave.beta.features.main_activity.edit_profile_fragment.EditProfileAvatarDialog"
+        android:label="EditProfileAvatarDialog" >
+        <action
+            android:id="@+id/action_editProfileAvatarDialog_to_editAvatarCameraFragment"
+            app:destination="@id/editAvatarCameraFragment" />
+        <action
+            android:id="@+id/action_editProfileAvatarDialog_to_editAvatarGalleryFragment"
+            app:destination="@id/editAvatarGalleryFragment" />
+        <action
+            android:id="@+id/action_editProfileAvatarDialog_to_openSettingsDialog3"
+            app:destination="@id/openSettingsDialog3" />
+        <action
+            android:id="@+id/action_editProfileAvatarDialog_to_editAvatarDeleteDialog"
+            app:destination="@id/editAvatarDeleteDialog" />
+    </dialog>
+    <dialog
+        android:id="@+id/addAvatarDialog3"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.AddAvatarDialog"
+        android:label="AddAvatarDialog" >
+        <action
+            android:id="@+id/action_addAvatarDialog3_to_editAvatarCameraFragment"
+            app:destination="@id/editAvatarCameraFragment" />
+        <action
+            android:id="@+id/action_addAvatarDialog3_to_editAvatarGalleryFragment"
+            app:destination="@id/editAvatarGalleryFragment" />
+        <action
+            android:id="@+id/action_addAvatarDialog3_to_openSettingsDialog3"
+            app:destination="@id/openSettingsDialog3" />
+    </dialog>
+    <fragment
+        android:id="@+id/editAvatarCameraFragment"
+        android:name="com.test.chatterwave.beta.features.main_activity.edit_profile_fragment.edit_with_camera_fragment.EditAvatarCameraFragment"
+        android:label="fragment_edit_avatar_camera"
+        tools:layout="@layout/fragment_edit_avatar_camera" />
+    <fragment
+        android:id="@+id/editAvatarGalleryFragment"
+        android:name="com.test.chatterwave.beta.features.main_activity.edit_profile_fragment.edit_with_gallery_fragment.EditAvatarGalleryFragment"
+        android:label="fragment_edit_avatar_gallery"
+        tools:layout="@layout/fragment_edit_avatar_gallery" />
+    <dialog
+        android:id="@+id/openSettingsDialog3"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.OpenSettingsDialog"
+        android:label="OpenSettingsDialog" />
+    <dialog
+        android:id="@+id/editProfileCancelDialog"
+        android:name="com.test.chatterwave.beta.features.main_activity.edit_profile_fragment.EditProfileCancelDialog"
+        android:label="EditProfileCancelDialog" />
+    <dialog
+        android:id="@+id/editAvatarDeleteDialog"
+        android:name="com.test.chatterwave.beta.features.main_activity.edit_profile_fragment.EditAvatarDeleteDialog"
+        android:label="EditAvatarDeleteDialog" />
+    <activity
+        android:id="@+id/authActivity2"
+        android:name="com.test.chatterwave.beta.features.auth_activity.AuthActivity"
+        android:label="activity_auth"
+        tools:layout="@layout/activity_auth" />
+</navigation>

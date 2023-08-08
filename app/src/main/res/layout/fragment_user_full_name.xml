@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.chatterwave.beta.features.auth_activity.sign_up.user_full_name.UserFullNameFragment">
+
+    <ImageView
+        android:id="@+id/backImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:src="@drawable/arrow_back_ios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/addFullNameText"
+        style="@style/DefaultBoldTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:text="@string/add_your_full_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/addNameFor"
+        style="@style/DefaultRegularFootnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/add_your_name_for"
+        app:layout_constraintEnd_toEndOf="@+id/addFullNameText"
+        app:layout_constraintStart_toStartOf="@+id/addFullNameText"
+        app:layout_constraintTop_toBottomOf="@+id/addFullNameText" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fullNameLayout"
+        style="@style/TextInputLayoutDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:counterEnabled="false"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/error_red"
+        app:boxStrokeErrorColor="@color/error_red"
+        app:errorIconDrawable="@drawable/multiply_circle"
+        app:endIconMode="custom"
+        app:endIconTint="@color/success_green"
+        app:layout_constraintEnd_toEndOf="@+id/addNameFor"
+        app:layout_constraintStart_toStartOf="@+id/addNameFor"
+        app:layout_constraintTop_toBottomOf="@+id/addNameFor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fullNameEditText"
+            style="@style/TextInputEditTextDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextBtn"
+        style="@style/PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:enabled="false"
+        android:text="@string/next"
+        app:layout_constraintEnd_toEndOf="@+id/fullNameLayout"
+        app:layout_constraintStart_toStartOf="@+id/fullNameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/fullNameLayout">
+
+    </com.google.android.material.button.MaterialButton>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

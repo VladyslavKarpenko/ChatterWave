@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="createPostWithCameraVM"
+            type="com.test.chatterwave.beta.features.main_activity.create_post_fragment.create_post_with_camera.CreatePostWithCameraViewModel" />
+        <variable
+            name="mainActivityViewModel"
+            type="com.test.chatterwave.beta.features.main_activity.MainActivityViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.chatterwave.beta.features.main_activity.create_post_fragment.create_post_with_camera.CreatePostWithCameraFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:paddingHorizontal="16dp"
+        android:id="@+id/toolBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cancelButton"
+            style="@style/DefaultRegularSubheadline"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/cancel" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/DefaultBoldSubheadline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/photo" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/shareButton"
+            style="@style/DefaultBoldSubheadline"
+            android:textColor="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/cameraView"
+        cameraFacing="@{createPostWithCameraVM.cameraFacing}"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_390dp"
+        android:keepScreenOn="true"
+        app:cameraAudio="off"
+        app:cameraEngine="camera1"
+        app:cameraFacing="front"
+        app:cameraGesturePinch="zoom"
+        app:cameraGestureTap="autoFocus"
+        app:cameraHdr="on"
+        app:cameraMode="picture"
+        app:cameraPictureFormat="jpeg"
+        app:cameraPictureSizeBiggest="true"
+        app:cameraPictureSizeMaxArea="@integer/camera_picture_size_max_area"
+        app:cameraPlaySounds="false"
+        app:cameraPreviewFrameRate="@integer/camera_preview_frame_rate"
+        app:cameraWhiteBalance="auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarLayout">
+
+    </com.otaliastudios.cameraview.CameraView>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/changeCameraFacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/margin_16"
+        android:background="@color/greyscale_black_10"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraView"
+        app:layout_constraintStart_toStartOf="@+id/cameraView"
+        app:shapeAppearance="@style/roundedImageView"
+        app:srcCompat="@drawable/circlepath" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/takePhoto"
+        android:layout_width="@dimen/weight_75dp"
+        android:layout_height="@dimen/weight_75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraView"
+        app:srcCompat="@drawable/take_photo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="cityViewModel"
+            type="com.test.chatterwave.beta.features.auth_activity.sign_up.add_city_fragment.AddCityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.test.chatterwave.beta.features.auth_activity.sign_up.add_city_fragment.AddCityFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/arrowBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_back_ios" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/addCity"
+            style="@style/DefaultBoldTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:text="@string/enter_your_city"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/addCityText"
+            style="@style/DefaultRegularFootnote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/this_information_will_be_visible_in_your_profile"
+            app:layout_constraintEnd_toEndOf="@+id/addCity"
+            app:layout_constraintStart_toStartOf="@+id/addCity"
+            app:layout_constraintTop_toBottomOf="@+id/addCity" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            setError="@{cityViewModel.userCityValidationLocal}"
+            android:id="@+id/cityLayout"
+            style="@style/TextInputLayoutDefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_32"
+            android:hint="@string/your_city"
+            app:boxStrokeErrorColor="@color/error_red"
+            app:counterEnabled="false"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@null"
+            app:errorTextColor="@color/error_red"
+            app:layout_constraintEnd_toEndOf="@+id/addCityText"
+            app:layout_constraintStart_toStartOf="@+id/addCityText"
+            app:layout_constraintTop_toBottomOf="@+id/addCityText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cityEditText"
+                style="@style/TextInputEditTextDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            setEnabled="@{cityViewModel.userCityValidationLocal}"
+            android:id="@+id/nextButton"
+            style="@style/PrimaryButton"
+            android:layout_width="@dimen/text_input_weight"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:padding="@dimen/material_button_padding"
+            android:text="@string/next"
+            app:iconGravity="top"
+            app:layout_constraintEnd_toEndOf="@+id/cityLayout"
+            app:layout_constraintStart_toStartOf="@+id/cityLayout"
+            app:layout_constraintTop_toBottomOf="@+id/cityLayout">
+
+        </com.google.android.material.button.MaterialButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

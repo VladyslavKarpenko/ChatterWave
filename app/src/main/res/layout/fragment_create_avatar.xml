@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="authVM"
+            type="com.test.chatterwave.beta.features.auth_activity.AuthViewModel" />
+        <variable
+            name="cameraVM"
+            type="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_create_fragment.create_with_camera.CreateAvatarWithCameraViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_create_fragment.create_with_camera.CreateAvatarWithCameraFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_16"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_weight="@integer/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cancelButton"
+                style="@style/DefaultRegularSubheadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_weight="@integer/weight"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DefaultBoldSubheadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/photo" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_weight="@integer/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.fenchtose.nocropper.CropperImageView
+        hideOnLoading="@{authVM.userAvatar}"
+        setImage="@{authVM.userAvatar}"
+        android:visibility="invisible"
+        android:foreground="@drawable/photo_took_background"
+        android:id="@+id/tookPhotoResult"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_390dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
+        tools:ignore="UnusedAttribute" />
+
+    <com.otaliastudios.cameraview.CameraView
+        hideOnSuccess="@{authVM.userAvatar}"
+        cameraFacing="@{cameraVM.cameraFacing}"
+        android:id="@+id/cameraView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_390dp"
+        android:keepScreenOn="true"
+        app:cameraAudio="off"
+        app:cameraFacing="front"
+        app:cameraHdr="on"
+        app:cameraMode="picture"
+        app:cameraPictureSizeMaxArea="@integer/camera_picture_size_max_area"
+        app:cameraPictureSizeBiggest="true"
+        app:cameraPlaySounds="false"
+        app:cameraPictureFormat="jpeg"
+        app:cameraEngine="camera1"
+        app:cameraGestureTap="autoFocus"
+        app:cameraGesturePinch="zoom"
+        app:cameraPreviewFrameRate="@integer/camera_preview_frame_rate"
+        app:cameraWhiteBalance="auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+    </com.otaliastudios.cameraview.CameraView>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        hideOnSuccess="@{authVM.userAvatar}"
+        android:id="@+id/changeCameraFacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="@dimen/margin_8"
+        android:background="@color/greyscale_black_10"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraView"
+        app:layout_constraintStart_toStartOf="@+id/cameraView"
+        app:shapeAppearance="@style/roundedImageView"
+        app:srcCompat="@drawable/circlepath" />
+
+    <com.google.android.material.button.MaterialButton
+        hideOnLoading="@{authVM.userAvatar}"
+        showOnSuccess="@{authVM.userAvatar}"
+        android:id="@+id/nextButton"
+        style="@style/PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="@string/next"
+        android:layout_marginTop="@dimen/margin_32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        hideOnSuccess="@{authVM.userAvatar}"
+        android:id="@+id/takePhoto"
+        android:layout_width="@dimen/weight_75dp"
+        android:layout_height="@dimen/weight_75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraView"
+        app:srcCompat="@drawable/take_photo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

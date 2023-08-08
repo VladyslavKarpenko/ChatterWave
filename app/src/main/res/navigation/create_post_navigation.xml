@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/create_post_navigation"
+    app:startDestination="@id/addAvatarDialog2">
+
+    <fragment
+        android:id="@+id/createPostWithCameraFragment"
+        android:name="com.test.chatterwave.beta.features.main_activity.create_post_fragment.create_post_with_camera.CreatePostWithCameraFragment"
+        android:label="fragment_create_post"
+        tools:layout="@layout/fragment_create_post_with_camera" >
+        <action
+            android:id="@+id/action_createPostWithCameraFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addAvatarDialog2"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.AddAvatarDialog"
+        android:label="AddAvatarDialog" >
+        <action
+            android:id="@+id/action_addAvatarDialog2_to_createPostWithCameraFragment"
+            app:destination="@id/createPostWithCameraFragment" />
+        <action
+            android:id="@+id/action_addAvatarDialog2_to_openSettingsDialog2"
+            app:destination="@id/openSettingsDialog2" />
+        <action
+            android:id="@+id/action_addAvatarDialog2_to_createPostWithGalleryFragment"
+            app:destination="@id/createPostWithGalleryFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/openSettingsDialog2"
+        android:name="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.OpenSettingsDialog"
+        android:label="OpenSettingsDialog" />
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.test.chatterwave.beta.features.main_activity.create_post_fragment.CreatePostFragment"
+        android:label="CreatePostFragment" >
+        <action
+            android:id="@+id/action_createPostFragment_to_cancelCreatePostDialog"
+            app:destination="@id/cancelCreatePostDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPostWithGalleryFragment"
+        android:name="com.test.chatterwave.beta.features.main_activity.create_post_fragment.create_post_with_gallery.CreatePostWithGalleryFragment"
+        android:label="fragment_create_post_with_gallery"
+        tools:layout="@layout/fragment_create_post_with_gallery" >
+        <action
+            android:id="@+id/action_createPostWithGalleryFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/cancelCreatePostDialog"
+        android:name="com.test.chatterwave.beta.features.main_activity.create_post_fragment.CancelCreatePostDialog"
+        android:label="CancelCreatePostDialog" />
+</navigation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PostFooter">
+        <attr name="isLiked" format="boolean" />
+        <attr name="likes" format="integer" />
+        <attr name="postTime" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="RequirementChecker">
+        <attr name="requirementText" format="string" />
+        <attr name="requirementChecker" format="integer" />
+        <attr name="requirementEnabled" format="boolean"/>
+    </declare-styleable>
+</resources>

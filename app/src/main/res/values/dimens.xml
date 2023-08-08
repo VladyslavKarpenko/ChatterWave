@@ -1,0 +1,59 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="text_size_inter">8sp</dimen>
+    <dimen name="text_size_caption_2">11sp</dimen>
+    <dimen name="text_size_caption_1">12sp</dimen>
+    <dimen name="text_size_footnote">13sp</dimen>
+    <dimen name="text_size_subheadline">15sp</dimen>
+    <dimen name="text_size_callout">16sp</dimen>
+    <dimen name="text_size_body">17sp</dimen>
+    <dimen name="text_size_headline">@dimen/text_size_body</dimen>
+    <dimen name="text_size_title_3">20sp</dimen>
+    <dimen name="text_size_title_2">22sp</dimen>
+    <dimen name="text_size_title_1">28sp</dimen>
+    <dimen name="text_size_large_title">34sp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_bigger">20dp</dimen>
+    <dimen name="margin_x2">32dp</dimen>
+    <dimen name="margin_large">40dp</dimen>
+    <dimen name="text_input_weight">358dp</dimen>
+    <dimen name="text_view_weight">271dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="margin_222">222dp</dimen>
+    <dimen name="margin_83">83dp</dimen>
+    <dimen name="margin_72">72dp</dimen>
+    <dimen name="margin_64">64dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="material_button_padding">12dp</dimen>
+    <dimen name="arrow_back_padding">16dp</dimen>
+    <dimen name="margin_horizontal_19dp">19dp</dimen>
+    <dimen name="margin_bottom_96dp">96dp</dimen>
+    <dimen name="margin_top_16dp">16dp</dimen>
+    <dimen name="height_44dp">44dp</dimen>
+    <dimen name="height_16dp">16dp</dimen>
+    <dimen name="height_56dp">56dp</dimen>
+    <dimen name="height_32dp">32dp</dimen>
+    <dimen name="height_150dp">150dp</dimen>
+    <dimen name="weight_358dp">358dp</dimen>
+    <dimen name="weight_80dp">80dp</dimen>
+    <dimen name="weight_16dp">16dp</dimen>
+    <dimen name="arrow_padding">16dp</dimen>
+    <dimen name="height_390dp">390dp</dimen>
+    <dimen name="weight_124dp">124dp</dimen>
+    <dimen name="stroke_1dp">1dp</dimen>
+    <dimen name="weight_75dp">75dp</dimen>
+    <dimen name="weight_100dp">100dp</dimen>
+    <dimen name="weight_70dp">70dp</dimen>
+    <dimen name="margin_18">18dp</dimen>
+
+    <integer name="camera_preview_frame_rate">60</integer>
+    <integer name="camera_picture_size_max_area">20117248</integer>
+    <integer name="weight">1</integer>
+
+</resources>

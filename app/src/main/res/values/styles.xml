@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.ChatterWave" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/greyscale_black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.ChatterWave.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ChatterWave.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.ActionBar" />
+
+    <style name="Theme.ChatterWave.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <!--Regular Styles-->
+    <style name="DefaultRegularCaption2" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">@dimen/text_size_caption_2</item>
+    </style>
+
+    <style name="DefaultRegularCaption1">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">@dimen/text_size_caption_1</item>
+    </style>
+
+    <style name="DefaultRegularFootnote" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">@dimen/text_size_footnote</item>
+    </style>
+
+    <style name="DefaultRegularSubheadline" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">@dimen/text_size_subheadline</item>
+    </style>
+
+    <style name="DefaultRegularCallout" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">@dimen/text_size_callout</item>
+    </style>
+
+    <style name="DefaultRegularBody" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+
+    <style name="DefaultRegularHeadline" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">@dimen/text_size_headline</item>
+    </style>
+
+    <style name="DefaultRegularTitle3" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">@dimen/text_size_title_3</item>
+    </style>
+
+    <style name="DefaultRegularTitle2" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">@dimen/text_size_title_2</item>
+    </style>
+
+    <style name="DefaultRegularTitle1" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">@dimen/text_size_title_1</item>
+    </style>
+
+    <style name="DefaultRegularLargeTitle" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">@dimen/text_size_large_title</item>
+    </style>
+
+    <style name="InterRegular" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/text_size_inter</item>
+    </style>
+
+    <!--Bold Styles-->
+    <style name="DefaultBoldCaption2" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">@dimen/text_size_caption_2</item>
+    </style>
+
+    <style name="DefaultBoldCaption1" parent="Theme.ChatterWave">
+        <item name="android:textSize">@dimen/text_size_caption_1</item>
+    </style>
+
+    <style name="DefaultBoldFootnote" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">@dimen/text_size_footnote</item>
+    </style>
+
+    <style name="DefaultBoldSubheadline" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">@dimen/text_size_subheadline</item>
+    </style>
+
+    <style name="DefaultBoldCallout" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">@dimen/text_size_callout</item>
+    </style>
+
+    <style name="DefaultBoldBody" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">@dimen/text_size_body</item>
+    </style>
+
+    <style name="DefaultBoldHeadline" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_text_semibold</item>
+        <item name="android:textSize">@dimen/text_size_headline</item>
+    </style>
+
+    <style name="DefaultBoldTitle3" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">@dimen/text_size_title_3</item>
+    </style>
+
+    <style name="DefaultBoldTitle2" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_display_bold</item>
+        <item name="android:textSize">@dimen/text_size_title_2</item>
+    </style>
+
+    <style name="DefaultBoldTitle1" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_display_bold</item>
+        <item name="android:textSize">@dimen/text_size_title_1</item>
+    </style>
+
+    <style name="DefaultBoldLargeTitle" parent="Theme.ChatterWave">
+        <item name="android:fontFamily">@font/sf_pro_display_bold</item>
+        <item name="android:textSize">@dimen/text_size_large_title</item>
+    </style>
+
+    <!--Buttons-->
+
+    <style name="PrimaryButton" parent="DefaultBoldFootnote">
+        <item name="android:height">@dimen/height_56dp</item>
+        <item name="android:width">@dimen/weight_358dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/color_states_materialbutton</item>
+    </style>
+
+    <style name="CreateAccountButton" parent="DefaultBoldFootnote">
+        <item name="android:height">@dimen/height_56dp</item>
+        <item name="android:width">@dimen/weight_358dp</item>
+        <item name="android:textColor">#B53EDC</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/gradient</item>
+    </style>
+
+    <style name="FollowButton" parent="DefaultBoldFootnote">
+        <item name="android:height">@dimen/height_32dp</item>
+        <item name="android:width">@dimen/weight_80dp</item>
+    </style>
+
+    <!--Input EditText Style-->
+    <style name="TextInputLayoutDefault" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/white_inputs</item>
+        <item name="errorTextColor">@color/error_red</item>
+        <item name="boxStrokeErrorColor">@color/error_red</item>
+    </style>
+
+    <style name="TextInputLayoutWithCounter" parent="TextInputLayoutDefault">
+        <item name="counterEnabled">true</item>
+        <item name="counterMaxLength">120</item>
+    </style>
+
+    <style name="TextInputEditTextDefault" parent="DefaultRegularCaption1">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:minWidth">@dimen/weight_358dp</item>
+        <item name="android:maxWidth">@dimen/weight_358dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/greyscale_black_65</item>
+        <item name="errorTextColor">@color/error_red</item>
+        <item name="boxStrokeErrorColor">@color/error_red</item>
+    </style>
+
+    <style name="EmailInputLayout" parent="TextInputLayoutDefault">
+        <item name="android:layout_marginTop">@dimen/margin_16</item>
+        <item name="android:layout_marginLeft">@dimen/margin_16</item>
+        <item name="android:layout_marginRight">@dimen/margin_16</item>
+        <item name="errorTextColor">@color/error_red</item>
+        <item name="boxStrokeErrorColor">@color/error_red</item>
+    </style>
+
+    <style name="PhoneInputLayout" parent="TextInputLayoutDefault">
+        <item name="prefixText">+380</item>
+        <item name="android:layout_marginTop">@dimen/margin_16</item>
+        <item name="android:layout_marginLeft">@dimen/margin_16</item>
+        <item name="android:layout_marginRight">@dimen/margin_16</item>
+        <item name="errorTextColor">@color/error_red</item>
+        <item name="boxStrokeErrorColor">@color/error_red</item>
+        <item name="android:minWidth">@dimen/weight_358dp</item>
+        <item name="android:maxWidth">@dimen/weight_358dp</item>
+    </style>
+
+    <style name="BioInputTextDefault" parent="TextInputLayoutWithCounter">
+        <item name="android:minWidth">@dimen/weight_358dp</item>
+        <item name="android:maxWidth">@dimen/weight_358dp</item>
+        <item name="android:minHeight">@dimen/height_150dp</item>
+        <item name="android:maxHeight">@dimen/height_150dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:maxLength">120</item>
+    </style>
+
+    <style name="PostInputTextDefault" parent="TextInputLayoutWithCounter">
+        <item name="android:minWidth">@dimen/weight_358dp</item>
+        <item name="android:maxWidth">@dimen/weight_358dp</item>
+        <item name="android:minHeight">@dimen/height_150dp</item>
+        <item name="android:maxHeight">@dimen/height_150dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:maxLength">500</item>
+    </style>
+
+    <!--Shape Styles-->
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!--Dialog Styles-->
+    <style name="AlertDialogTryAgainLogin" parent="Theme.Material3.Light.Dialog">
+        <item name="titleTextColor">@color/black</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/DefaultBoldSubheadline</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/DefaultRegularCaption1</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!--TabLayout-->
+    <style name="CustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!--TextViews-->
+    <style name="TermsAndConditionsText" parent="DefaultBoldCaption1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/greyscale_black_65</item>
+        <item name="android:textSize">@dimen/text_size_caption_1</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <style name="TermsAndConditionsTextHeadline" parent="DefaultBoldHeadline">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_body</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>

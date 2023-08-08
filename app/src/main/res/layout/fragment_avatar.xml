@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="authVM"
+            type="com.test.chatterwave.beta.features.auth_activity.AuthViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.chatterwave.beta.features.auth_activity.sign_up.avatar_fragment.AvatarFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/DefaultBoldCallout"
+        android:id="@+id/skipButton"
+        android:textColor="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/arrow_back_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/skip" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/addAvatar"
+        style="@style/DefaultBoldTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_72"
+        android:gravity="center"
+        android:text="@string/add_profile_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/addAvatarText"
+        style="@style/DefaultRegularFootnote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:gravity="center"
+        android:text="@string/add_profile_photo_text"
+        app:layout_constraintEnd_toEndOf="@+id/addAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/addAvatar"
+        app:layout_constraintStart_toStartOf="@id/addAvatar"/>
+
+    <!--app:strokeColor="@color/error_red"-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/appCompatImageView"
+        app:shapeAppearance="@style/roundedImageView"
+        android:padding="@dimen/margin_3"
+        app:strokeWidth="@dimen/stroke_1dp"
+        setImage="@{authVM.userAvatar}"
+        android:background="@color/greyscale_black_10"
+        android:layout_width="@dimen/weight_124dp"
+        android:scaleType="centerCrop"
+        android:layout_height="@dimen/weight_124dp"
+        android:layout_marginTop="@dimen/margin_32"
+        app:layout_constraintEnd_toEndOf="@+id/addAvatarText"
+        app:layout_constraintStart_toStartOf="@+id/addAvatarText"
+        app:layout_constraintTop_toBottomOf="@+id/addAvatarText" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/addPhotoButton"
+        style="@style/DefaultBoldFootnote"
+        hideOnSuccess="@{authVM.userAvatar}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8"
+        android:text="@string/add_a_photo"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+        app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        showOnSuccess="@{authVM.userAvatar}"
+        android:id="@+id/changePhotoButton"
+        style="@style/DefaultBoldFootnote"
+        android:textColor="@color/blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_profile_photo"
+        android:layout_marginTop="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+        app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        showOnSuccess="@{authVM.userAvatar}"
+        android:id="@+id/deleteAvatarButton"
+        style="@style/DefaultBoldFootnote"
+        android:textColor="@color/error_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_profile_photo"
+        android:layout_marginTop="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="@+id/changePhotoButton"
+        app:layout_constraintStart_toStartOf="@+id/changePhotoButton"
+        app:layout_constraintTop_toBottomOf="@+id/changePhotoButton" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/addPhotoError"
+        android:layout_width="@dimen/weight_358dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@string/incorrect_photo_format"
+        app:layout_constraintStart_toStartOf="@+id/addPhotoButton"
+        app:layout_constraintTop_toBottomOf="@+id/addPhotoButton"
+        app:layout_constraintEnd_toEndOf="@id/addPhotoButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nexButton"
+        style="@style/PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:text="@string/next"
+        android:layout_marginTop="@dimen/margin_8"
+        app:layout_constraintEnd_toEndOf="@+id/deleteAvatarButton"
+        app:layout_constraintStart_toStartOf="@+id/deleteAvatarButton"
+        app:layout_constraintTop_toBottomOf="@+id/deleteAvatarButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
